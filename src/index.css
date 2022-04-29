@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+#root {
+    font-family: 'Montserrat', sans-serif;
+    min-width: 600px;
+}
+
+/* header */
+
+.header {
+    background-color: #4A536B;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.header p {
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+}
+
+/* accordion */
+
+.accordion {
+    margin: 1rem;
+}
+
+/* accordion button */
+
+.accordion-button {
+    background-color: #FF9A8D;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.3rem;
+}
+
+/* accordion content */
+
+.accordion-content {
+    background-color: #AED6DC;
+    display: flex;
+}
+
+.accordion-content > * {
+    padding: 1rem;
+}
+
+.details {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.details > * {
+    padding: .5rem;
+}
+
+.details-labels {
+    font-weight: bold;
+}
