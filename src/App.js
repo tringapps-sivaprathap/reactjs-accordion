@@ -3,27 +3,24 @@ import Accordion from "./components/Accordion";
 
 const App = () => {
   const [users, setUsers] = useState([])
-  const [render, setRender] = useState(true)
-  const [errorMessage, setErrorMessage] = useState('')
+  const [showAccordion, setShowAccordion] = useState(true)
+  const { REACT_APP_DOMAIN_NAME } = process.env;
 
   useEffect(() => {
-    const site = "https://reqres.in";
-    fetch(`${site}/api/users`)
+    fetch(`${REACT_APP_DOMAIN_NAME}/api/users`)
       .then((response) => response.json())
       .then((items) => setUsers(items.data))
-      .catch((error) => {
-        setRender(false);
-        setErrorMessage(error.message);
+      .catch(() => {
+        setShowAccordion(false);
       })
-  }, [setRender, setErrorMessage])
+  }, [REACT_APP_DOMAIN_NAME, setShowAccordion])
 
   return (
     <>
       <div className="header">
         <p>Employees Accordion</p>
       </div>
-      {render && <Accordion users={users}/>}
-      {!render && <p className="fetch-error">{errorMessage}</p>}
+      {showAccordion ? users.length === 0 ? <p className="empty-error">No Users Available</p> : <Accordion users={users}/> : <p className="fetch-error">Failed to fetch</p>}
     </>
   )
 }

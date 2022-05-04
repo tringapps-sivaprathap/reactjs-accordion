@@ -26,7 +26,7 @@
     color: white;
 }
 
-.fetch-error {
+.fetch-error, .empty-error {
     text-align: center;
     font-weight: bold;
     font-size: 1.5rem;
@@ -51,11 +51,23 @@
     font-size: 1.3rem;
 }
 
+.uparrow::after {
+    content: "⮝";
+}
+
+.downarrow::after {
+    content: "⮟";
+}
+
 /* accordion content */
 
 .accordion-content {
     background-color: #AED6DC;
     display: flex;
+}
+
+.accordion img {
+    max-width: 150px;
 }
 
 .accordion-content > * {
