@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
-import Accordion from "./Accordion";
+import Accordion from "./components/Accordion";
 
 const App = () => {
   const [users, setUsers] = useState([])
 
   useEffect(() => {
-    fetch("https://reqres.in/api/users")
+    const site = "https://reqres.in";
+    fetch(`${site}/api/users`)
       .then((response) => response.json())
       .then((items) => setUsers(items.data))
   }, [])

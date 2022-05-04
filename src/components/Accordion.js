@@ -1,7 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Accordion = ({ users }) => {
-	const [clicked, setClicked] = useState(null)
+    const [clicked, setClicked] = useState(null)
+    
+    useEffect(() => {
+        if(localStorage.getItem("currentuser") != null)
+            setClicked(JSON.parse(localStorage.getItem("currentuser")).id)
+    }, [])
+
     const toggle = (user) => {
         // if clicked second time {display nothing} else {display correspnding}
         if(clicked === user.id) {
