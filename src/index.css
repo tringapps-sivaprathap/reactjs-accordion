@@ -26,6 +26,14 @@
     color: white;
 }
 
+.fetch-error {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: red;
+    margin-top: 10vh;
+}
+
 /* accordion */
 
 .accordion {
