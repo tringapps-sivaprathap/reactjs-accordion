@@ -64,6 +64,7 @@
 .accordion-content {
     background-color: #AED6DC;
     display: flex;
+    transition: .5s all;
 }
 
 .accordion img {

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import avatarTemplate from "../assets/avatar-template.jpg"
+import avatarTemplate from "../assets/avatar-template.jpg";
 
 const Accordion = ({ users }) => {
     const [clicked, setClicked] = useState(null)
