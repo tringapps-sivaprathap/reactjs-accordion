@@ -20,12 +20,19 @@ const App = () => {
       })
   }, [REACT_APP_DOMAIN_NAME])
 
+  const showAccordion = () => {
+      if(fetched)
+        return users.length !== 0 ? <Accordion users={users}/> : <p className="empty-error">No Users Available</p>
+      else
+        return <p className="fetch-error">Failed to fetch</p>
+  }
+
   return (
     <>
       <div className="header">
         <p>Employees Accordion</p>
       </div>
-      {loaded ? fetched ? users.length !== 0 ? <Accordion users={users}/> : <p className="empty-error">No Users Available</p> : <p className="fetch-error">Failed to fetch</p> : <p>Loading...</p>}
+      {loaded ? showAccordion() : <p>Loading...</p>}
     </>
   )
 }
